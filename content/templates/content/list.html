@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Your Content</h1>
+<a href="{% url 'content_create' %}">Create New</a>
+<ul>
+    {% for item in items %}
+        <li><a href="{% url 'content_detail' item.pk %}">{{ item.title }}</a></li>
+    {% empty %}
+        <li>No content yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
