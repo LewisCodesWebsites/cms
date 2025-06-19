@@ -17,7 +17,7 @@ This repository contains a minimal Content Management System built with **Django
 Install dependencies and run the development server:
 
 ```bash
-pip install django==5.0.2
+pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver 0.0.0.0:8000
 ```
