@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ item.title }}</h1>
+<p>{{ item.body }}</p>
+<p><a href="{% url 'content_edit' item.pk %}">Edit</a></p>
+<h2>Versions</h2>
+<ul>
+    {% for version in item.versions.all %}
+        <li>v{{ version.version_number }} - {{ version.created_at }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
