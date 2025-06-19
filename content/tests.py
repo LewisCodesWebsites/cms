@@ -14,3 +14,7 @@ class ContentItemTests(TestCase):
         self.assertContains(response, "Hello")
         self.assertContains(response, "World")
 
+
+    def test_accounts_login_page(self):
+        response = self.client.get("/accounts/login/")
+        self.assertEqual(response.status_code, 200)
